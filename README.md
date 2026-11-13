@@ -15,8 +15,10 @@ La propuesta no busca reemplazar un proceso experimental completo, sino document
 
 ## 🌐 Acceso al proyecto
 
-- **Landing Page:** [EcoVision AI](https://dgonzro27.github.io/PROYECTO_ABP_ECO/](https://dgonzro27.github.io/PROYECTO_ABP_FRUITIA/)
+- **Landing Page:** [FRUTIA]([https://dgonzro27.github.io/PROYECTO_ABP_ECO/](https://dgonzro27.github.io/PROYECTO_ABP_FRUITIA/))
 - **Aplicación Streamlit:** [Probar EcoVision AI](https://proyecto-abp-ecovision.streamlit.app/)
+
+Explora la página de presentación del proyecto y accede a la aplicación para probar la clasificación de residuos mediante inteligencia artificial.
 
 Explora la página de presentación del proyecto y accede a la aplicación para probar la clasificación de residuos mediante inteligencia artificial.
 
