@@ -13,6 +13,13 @@ Construir una solución de visión artificial para reconocer cuatro clases:
 
 La propuesta no busca reemplazar un proceso experimental completo, sino documentar de manera rigurosa la arquitectura real, el tipo de entrada/salida, el preprocesamiento requerido y la lógica de inferencia para un sistema de clasificación visual.
 
+## 🌐 Acceso al proyecto
+
+- **Landing Page:** [EcoVision AI](https://dgonzro27.github.io/PROYECTO_ABP_ECO/](https://dgonzro27.github.io/PROYECTO_ABP_FRUITIA/)
+- **Aplicación Streamlit:** [Probar EcoVision AI](https://proyecto-abp-ecovision.streamlit.app/)
+
+Explora la página de presentación del proyecto y accede a la aplicación para probar la clasificación de residuos mediante inteligencia artificial.
+
 ## Evidencia del modelo exportado
 
 Se reutiliza el archivo exportado original en `models/keras_model.h5`, junto con `models/labels.txt`.
