@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FruitVision AI</title>
+    <style>
+      :root {
+        --bg: #f3f8f0;
+        --panel: #ffffff;
+        --primary: #2d7d46;
+        --primary-dark: #1f5a35;
+        --accent: #e2f3d8;
+        --text: #1e1f20;
+        --muted: #586260;
+        --shadow: 0 12px 32px rgba(35, 80, 46, 0.12);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(180deg, #f9fdf8 0%, #f0f6ee 100%);
+        color: var(--text);
+      }
+      a { color: var(--primary-dark); text-decoration: none; }
+      .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+      header {
+        background: rgba(255,255,255,0.8);
+        backdrop-filter: blur(8px);
+        position: sticky; top: 0; z-index: 10;
+        border-bottom: 1px solid #dfe9dd;
+      }
+      nav {
+        display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; padding: 16px 24px;
+      }
+      .brand { font-weight: 700; font-size: 1.3rem; }
+      .menu { display: flex; gap: 18px; flex-wrap: wrap; }
+      .hero {
+        display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; align-items: center; padding: 48px 0 32px;
+      }
+      .hero h1 { font-size: clamp(2.2rem, 4vw, 4rem); margin: 0 0 16px; }
+      .hero p { color: var(--muted); font-size: 1.08rem; line-height: 1.7; }
+      .actions { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+      .btn {
+        display: inline-block; background: var(--primary); color: white; padding: 12px 22px; border-radius: 999px; font-weight: 600; box-shadow: var(--shadow);
+      }
+      .btn.secondary { background: white; color: var(--primary-dark); border: 1px solid #d7e6d8; }
+      .card {
+        background: var(--panel); border-radius: 20px; box-shadow: var(--shadow); padding: 22px; border: 1px solid #e7efe5;
+      }
+      .stats {
+        display: grid; grid-template-columns: repeat(3, minmax(140px, 1fr)); gap: 16px; margin-top: 28px;
+      }
+      .stat { background: var(--panel); border-radius: 16px; padding: 18px; border: 1px solid #e7efe5; }
+      .stat strong { display: block; font-size: 1.6rem; }
+      section { padding: 26px 0; }
+      h2 { margin-top: 0; margin-bottom: 12px; }
+      .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+      .pill { display: inline-block; padding: 8px 12px; border-radius: 999px; background: var(--accent); color: var(--primary-dark); font-weight: 700; margin: 6px 6px 0 0; }
+      .svg-box { background: var(--panel); border-radius: 18px; overflow: hidden; border: 1px solid #e7efe5; }
+      .footer { text-align: center; padding: 30px 0 60px; color: var(--muted); }
+      @media (max-width: 760px) {
+        .hero, .grid, .stats { grid-template-columns: 1fr; }
+        nav { flex-direction: column; gap: 12px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="brand">🍏 FruitVision AI Daniel Alejandro Gonzalez Rodriguez</div>
+        <div class="menu">
+          <a href="#inicio">Inicio</a>
+          <a href="#metodologia">Metodología</a>
+          <a href="#arquitectura">Arquitectura</a>
+          <a href="#glosario">Glosario</a>
+          <a href="#tutorial">Tutorial</a>
+          <a href="#resultados">Resultados</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section id="inicio" class="hero">
+        <div>
+          <span class="pill">Redes neuronales · Deep Learning</span>
+          <h1>FruitVision AI</h1>
+          <p>
+            Proyecto académico para clasificar el estado de frescura de frutas mediante una red neuronal convolucional.
+            El foco está en la fundamentación matemática, la arquitectura neuronal, la evaluación y la aplicación práctica.
+          </p>
+          <div class="actions">
+            <a class="btn" href="app.py">Probar la aplicación</a>
+            <a class="btn secondary" href="README.md">Repositorio</a>
+          </div>
+          <div class="stats">
+            <div class="stat"><strong>4</strong> clases</div>
+            <div class="stat"><strong>224×224</strong> entrada</div>
+            <div class="stat"><strong>MobileNetV2</strong> base</div>
+          </div>
+        </div>
+        <div class="card">
+          <img alt="FruitVision preview" style="width:100%; border-radius:14px;" src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=900&q=80" />
+        </div>
+      </section>
+
+      <section id="metodologia">
+        <h2>Metodología CRISP-ML</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Comprensión del problema</h3>
+            <p>Se define como objetivo la clasificación de fruta fresca vs. deteriorada para cuatro categorías.</p>
+          </div>
+          <div class="card">
+            <h3>Preparación de datos</h3>
+            <p>Se trabaja con separación por origen y se evita mezclar entrenamiento y prueba en la misma fuente.</p>
+          </div>
+          <div class="card">
+            <h3>Diseño del modelo</h3>
+            <p>Se reutiliza la exportación de Teachable Machine basada en MobileNetV2 y se valida la arquitectura real.</p>
+          </div>
+          <div class="card">
+            <h3>Evaluación y despliegue</h3>
+            <p>Se calculan métricas reales y se prepara una aplicación de clasificación interactiva.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="arquitectura">
+        <h2>Arquitectura de la red neuronal</h2>
+        <div class="svg-box">
+          <svg viewBox="0 0 1000 420" width="100%" height="420" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="150" width="120" height="90" fill="#dfeee2" stroke="#2d7d46"/>
+            <text x="80" y="205" text-anchor="middle" font-size="22">Imagen</text>
+            <text x="80" y="225" text-anchor="middle" font-size="18">224×224×3</text>
+
+            <rect x="180" y="120" width="170" height="150" fill="#e8f7d8" stroke="#2d7d46"/>
+            <text x="265" y="180" text-anchor="middle" font-size="22">MobileNetV2</text>
+            <text x="265" y="210" text-anchor="middle" font-size="18">Extracción de rasgos</text>
+
+            <rect x="400" y="150" width="170" height="90" fill="#dfeee2" stroke="#2d7d46"/>
+            <text x="485" y="195" text-anchor="middle" font-size="20">GlobalAveragePooling2D</text>
+
+            <rect x="620" y="150" width="140" height="90" fill="#e8f7d8" stroke="#2d7d46"/>
+            <text x="690" y="200" text-anchor="middle" font-size="20">Dense</text>
+
+            <rect x="810" y="150" width="150" height="90" fill="#dfeee2" stroke="#2d7d46"/>
+            <text x="885" y="195" text-anchor="middle" font-size="20">Softmax</text>
+            <text x="885" y="220" text-anchor="middle" font-size="18">4 salidas</text>
+
+            <line x1="140" y1="195" x2="180" y2="195" stroke="#2d7d46" stroke-width="3"/>
+            <line x1="350" y1="195" x2="400" y2="195" stroke="#2d7d46" stroke-width="3"/>
+            <line x1="570" y1="195" x2="620" y2="195" stroke="#2d7d46" stroke-width="3"/>
+            <line x1="760" y1="195" x2="810" y2="195" stroke="#2d7d46" stroke-width="3"/>
+          </svg>
+        </div>
+      </section>
+
+      <section id="glosario">
+        <h2>Glosario de redes neuronales</h2>
+        <div class="card">
+          <span class="pill">Inteligencia artificial</span>
+          <span class="pill">Machine Learning</span>
+          <span class="pill">Deep Learning</span>
+          <span class="pill">Neurona</span>
+          <span class="pill">Perceptrón</span>
+          <span class="pill">Peso</span>
+          <span class="pill">Sesgo</span>
+          <span class="pill">Activación</span>
+          <span class="pill">Sigmoide</span>
+          <span class="pill">ReLU</span>
+          <span class="pill">Softmax</span>
+          <span class="pill">CNN</span>
+          <span class="pill">Kernel</span>
+          <span class="pill">Convolución</span>
+          <span class="pill">Pooling</span>
+          <span class="pill">Transfer Learning</span>
+          <span class="pill">Forward Propagation</span>
+          <span class="pill">Backpropagation</span>
+        </div>
+      </section>
+
+      <section id="tutorial">
+        <h2>Tutorial paso a paso</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>1. Preparación</h3>
+            <p>Se cargan imágenes con tamaño 224×224 y se convierten a RGB.</p>
+          </div>
+          <div class="card">
+            <h3>2. Preprocesamiento</h3>
+            <p>Se normaliza el rango de píxeles conforme a la arquitectura base usada por la exportación.</p>
+          </div>
+          <div class="card">
+            <h3>3. Predicción</h3>
+            <p>La red calcula probabilidades para cuatro clases de fruta y estado de frescura.</p>
+          </div>
+          <div class="card">
+            <h3>4. Evaluación</h3>
+            <p>Se compara la salida contra etiquetas reales, calculando precisión, recall y F1-score.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="resultados">
+        <h2>Resultados reales y limitaciones</h2>
+        <div class="card">
+          <p>
+            El proyecto documenta de forma explícita la diferencia entre la evaluación interna de Teachable Machine
+            y la evaluación independiente con un conjunto reservado de prueba. No se asume un valor global de exactitud
+            sin la correspondiente verificación experimental.
+          </p>
+          <p>
+            La exportación disponible confirma un modelo entrenado basado en MobileNetV2, con cuatro salidas y una
+            entrada de 224×224×3. El repositorio conserva la arquitectura y los pesos originales sin reentrenamiento.
+          </p>
+          <p>
+            La versión final del proyecto prioriza la evidencia observada, la ejecución local del modelo exportado,
+            la claridad de la documentación y la transparencia metodológica sobre el alcance de la solución.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      FruitVision AI · Redes neuronales aplicadas al análisis visual de frutas
+    </footer>
+  </body>
+</html>
